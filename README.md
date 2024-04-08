@@ -22,8 +22,8 @@ As the name suggests, this project is a clone of a famous Q/A website for profes
 #### Back-end
 
 - For handling index requests: `Node.js with Express.js Framework`
-- As Database: `MySQL with Sequelize`
-- API tested using: `POSTMAN`
+- As Database: `MongoDB`
+- API tested using: `Thunder Client`
 
 ## Guidelines to setup
 
