@@ -1,34 +1,33 @@
-import config from "../config";
+// import config from "../config";
+
+const { REACT_APP_BASE_URL: URL } = process.env;
 
 // Users
-export const usersData = "http://localhost:3000/user/allusers";
-export const profileData = "http://localhost:3000/user/{id}";
+export const usersData = URL + "/user/allusers";
+export const profileData = URL + "/user/{id}";
 
 // Auth
-export const loadUserData = "http://localhost:3000/user/fromtoken/{token}";
-export const registerUser = "http://localhost:3000/user";
-export const loginUser = "http://localhost:3000/user/login-username";
+export const loadUserData = URL + "/user/fromtoken/{token}";
+export const registerUser = URL + "/user";
+export const loginUser = URL + "/user/login-username";
 
 // Posts
-export const allPostsData = "http://localhost:3000/question/allques";
-export const singlePostData = "http://localhost:3000/question/{id}";
-export const allTagPostsData = config.BASE_URL + "/api/posts/tag/{tagName}";
-export const createSinglePost = "http://localhost:3000/question/{userId}";
-export const deleteSinglePost = config.BASE_URL + "/api/posts/{id}";
+export const allPostsData = URL + "/question/allques";
+export const singlePostData = URL + "/question/{id}";
+export const allTagPostsData = "/api/posts/tag/{tagName}";
+export const createSinglePost = URL + "/question/{userId}";
+export const deleteSinglePost = "/question/{id}";
 
 // Answers
-export const allAnswersData = "http://localhost:3000/answer/{id}";
-export const createSingleAnswer = "http://localhost:3000/answer/{userId}";
-export const deleteSingleAnswer =
-  config.BASE_URL + "/api/posts/answers/{AnswerId}";
+export const allAnswersData = URL + "/answer/{id}";
+export const createSingleAnswer = URL + "/answer/{userId}";
+export const deleteSingleAnswer = URL + "/api/posts/answers/{AnswerId}";
 
 // Comments
-export const allCommentsData = config.BASE_URL + "/api/posts/comments/{id}";
-export const createSingleComment =
-  config.BASE_URL + "/api/posts/comments/{postId}";
-export const deleteSingleComment =
-  config.BASE_URL + "/api/posts/comments/{CommentId}";
+export const allCommentsData = URL + "/api/posts/comments/{id}";
+export const createSingleComment = URL + "/api/posts/comments/{postId}";
+export const deleteSingleComment = URL + "/api/posts/comments/{CommentId}";
 
 // Tags
-export const allTagsData = "http://localhost:3000/tag/";
-export const singleTagData = "http://localhost:3000/tag/{tagId}";
+export const allTagsData = URL + "/tag/";
+export const singleTagData = URL + "/tag/{tagId}";

@@ -8,7 +8,7 @@ const TagBadge = ({ tagId, size, display, link, href }) => {
   const [tag_name, setTag_name] = useState();
   useEffect(async () => {
     const tagData = await singleTagData(tagId);
-    console.log("Tag Badge2 = ", tagData, tagId);
+    // console.log("Tag Badge2 = ", tagData, tagId);
     setTag_name(tagData.data.newTag?.name);
   });
 

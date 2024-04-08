@@ -14,6 +14,7 @@ import {
   createSinglePost,
   deleteSinglePost,
 } from "../../api/postsApis";
+import { connect } from "react-redux";
 
 // Get posts
 export const getPosts = () => async (dispatch) => {
@@ -99,18 +100,19 @@ export const addPost = (formData, auth) => async (dispatch) => {
 };
 
 // Delete post
-export const deletePost = (id) => async (dispatch) => {
+export const deletePost = (id, auth) => async (dispatch) => {
   try {
-    const res = await deleteSinglePost(id);
+    const res = await deleteSinglePost(id, auth);
 
     dispatch({
       type: DELETE_POST,
       payload: id,
     });
 
-    dispatch(setAlert(res.data.message, "success"));
+    dispatch(setAlert("success"));
   } catch (err) {
-    dispatch(setAlert(err.response.data.message, "danger"));
+    console.log(err);
+    dispatch(setAlert(err.response.data.msg, "danger"));
 
     dispatch({
       type: POST_ERROR,
@@ -118,3 +120,9 @@ export const deletePost = (id) => async (dispatch) => {
     });
   }
 };
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(deletePost);

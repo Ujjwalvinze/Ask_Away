@@ -6,7 +6,7 @@ export const getUsers = () => async (dispatch) => {
   try {
     // console.log("Hello");
     const res = await usersData();
-    console.log("Hello", res.data);
+    // console.log("Hello", res.data);
     dispatch({
       type: GET_USERS,
       payload: res.data.user,

@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import { ReactComponent as ProfilePic } from "../../../assets/defaultProfileVerySmall.svg";
+
 import "./UserPanel.styles.scss";
 
 const UserPanel = ({
@@ -23,7 +25,7 @@ const UserPanel = ({
         <div className="user-gravatar">
           <Link to={`/users/${id}`}>
             <div className="logo-wrapper">
-              <img alt="user-logo" src="def.png" />
+              <ProfilePic />
             </div>
           </Link>
         </div>

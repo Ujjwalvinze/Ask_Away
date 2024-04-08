@@ -24,7 +24,7 @@ export const allTagPostsData = (tagName) => {
 };
 
 export const createSinglePost = (formData, auth) => {
-  console.log("token from form data from postsApis = ", auth.user);
+  // console.log("token from form data from postsApis = ", auth.user);
   const config_headers = {
     headers: {
       "Content-Type": "application/json",
@@ -39,6 +39,15 @@ export const createSinglePost = (formData, auth) => {
   );
 };
 
-export const deleteSinglePost = (id) => {
-  return axios.delete(_deleteSinglePost.replace("{id}", id));
+export const deleteSinglePost = (id, auth) => {
+  const config_headers = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + auth.token,
+    },
+  };
+
+  // console.log(id);
+
+  return axios.delete(_deleteSinglePost.replace("{id}", id), config_headers);
 };
