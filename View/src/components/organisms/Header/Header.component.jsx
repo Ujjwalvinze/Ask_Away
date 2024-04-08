@@ -16,7 +16,7 @@ import MobileSideBar from "../../organisms/MobileSideBar/MobileSideBar.component
 import "./Header.styles.scss";
 
 const Header = ({ auth: { isAuthenticated, loading, user }, logout }) => {
-  let navigate = useHistory();
+  let history = useHistory();
   const [searchState, setSearchState] = useState(false);
 
   const authLinks = (
