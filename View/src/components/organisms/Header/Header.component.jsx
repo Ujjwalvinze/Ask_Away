@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../../redux/auth/auth.actions";
@@ -16,7 +16,7 @@ import MobileSideBar from "../../organisms/MobileSideBar/MobileSideBar.component
 import "./Header.styles.scss";
 
 const Header = ({ auth: { isAuthenticated, loading, user }, logout }) => {
-  let navigate = useNavigate();
+  let navigate = useHistory();
   const [searchState, setSearchState] = useState(false);
 
   const authLinks = (
@@ -70,7 +70,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, logout }) => {
   const SearchBar = () => {
     return (
       <form
-        onSubmit={() => navigate("/questions")}
+        onSubmit={() => history.push("/questions")}
         className="small-search-form"
         autoComplete="off"
       >
